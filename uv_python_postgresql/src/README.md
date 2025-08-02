@@ -1,0 +1,2 @@
+# Python+Postgresql用の開発コンテナベース
+src内にソースを置きます
