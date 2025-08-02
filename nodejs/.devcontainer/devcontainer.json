@@ -1,0 +1,19 @@
+{
+  "name": "[開発コンテナ]nodejs",
+  "dockerComposeFile": ["../docker/docker-compose.local.yml"],
+  "service": "app",
+  "workspaceFolder": "/app",
+  "mounts": [
+    "source=${localEnv:HOME}/.gitconfig,target=/root/.gitconfig,type=bind,consistency=cached",
+    "source=${localEnv:HOME}/.ssh,target=/root/.ssh,type=bind,consistency=cached,readonly"
+  ],
+  "postCreateCommand": "git config --global --add safe.directory /app",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+} 

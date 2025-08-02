@@ -1,0 +1,12 @@
+name: nodejs
+services:
+  app:
+    container_name: nodejs_app
+    tty: true
+    build:
+      context: ../
+      dockerfile: docker/containers/app/Dockerfile
+    ports:
+      - 8000:80
+    volumes:
+      - ..:/app
